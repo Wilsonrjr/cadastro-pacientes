@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Médicos | Clínica Vida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca-bloco" href="index.html">
+            <span class="cruz" aria-hidden="true"></span>
+            <div>
+                <p class="marca">Clínica Vida</p>
+                <h1>Cadastro de Médicos</h1>
+            </div>
+        </a>
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a class="ativo" href="medicos.html">Médicos</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section class="painel">
+            <h2>Novo médico</h2>
+            <p class="dica">Cadastre a equipe médica. Depois, esses profissionais poderão ser vinculados aos pacientes.</p>
+
+            <form id="form-medico" class="form-cadastro">
+                <div class="campo campo-largo">
+                    <label for="nome">Nome completo *</label>
+                    <input id="nome" name="nome" type="text" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="crm">CRM *</label>
+                    <input id="crm" name="crm" type="text" required placeholder="CRM/SP 123456">
+                </div>
+
+                <div class="campo">
+                    <label for="especialidade">Especialidade</label>
+                    <select id="especialidade" name="especialidade">
+                        <option value="Clínica Geral">Clínica Geral</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Ortopedia">Ortopedia</option>
+                        <option value="Dermatologia">Dermatologia</option>
+                        <option value="Ginecologia">Ginecologia</option>
+                        <option value="Neurologia">Neurologia</option>
+                        <option value="Outra">Outra</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email">
+                </div>
+
+                <div class="acoes">
+                    <p id="mensagem-app" class="mensagem" hidden></p>
+                    <button type="submit" id="botao-salvar">Cadastrar médico</button>
+                    <button type="button" id="botao-limpar" class="botao-secundario">Limpar tela</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="lista-cabecalho">
+                <div>
+                    <h2>Médicos cadastrados</h2>
+                    <p id="total-medicos" class="dica">Nenhum médico cadastrado ainda.</p>
+                </div>
+                <input id="busca" type="search" placeholder="Buscar por nome, CRM ou especialidade">
+            </div>
+
+            <p id="lista-vazia" class="dica vazia">Os médicos cadastrados aparecerão aqui.</p>
+
+            <div class="tabela-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CRM</th>
+                            <th>Especialidade</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-medicos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/util.js"></script>
+    <script src="js/medicos.js"></script>
+</body>
+</html>

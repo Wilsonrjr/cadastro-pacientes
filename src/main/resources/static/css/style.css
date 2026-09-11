@@ -1,0 +1,392 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background: #f0fdfa;
+    color: #134e4a;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 32px;
+    background: linear-gradient(90deg, #134e4a 0%, #0f766e 100%);
+    color: #ffffff;
+}
+
+.marca-bloco {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #ccfbf1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cruz {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    background: #99f6e4;
+    border-radius: 10px;
+}
+
+.cruz::before,
+.cruz::after {
+    content: "";
+    position: absolute;
+    background: #0f766e;
+    border-radius: 2px;
+}
+
+.cruz::before {
+    width: 10px;
+    height: 26px;
+    left: 16px;
+    top: 8px;
+}
+
+.cruz::after {
+    width: 26px;
+    height: 10px;
+    left: 8px;
+    top: 16px;
+}
+
+.marca {
+    color: #99f6e4;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.topo h1 {
+    font-size: 24px;
+}
+
+.resumo {
+    color: #ccfbf1;
+    font-size: 14px;
+}
+
+.conteudo {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 32px 48px;
+    display: grid;
+    gap: 20px;
+}
+
+.painel {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(15, 118, 110, 0.08);
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.dica {
+    color: #0f766e;
+    opacity: 0.8;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.painel-boas-vindas {
+    text-align: center;
+    padding: 32px 24px 16px;
+}
+
+.painel-boas-vindas .dica {
+    margin-bottom: 0;
+}
+
+.grade-atalhos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cartao-atalho {
+    display: block;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 10px 30px rgba(15, 118, 110, 0.08);
+    border: 1px solid #ccfbf1;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cartao-atalho:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(15, 118, 110, 0.14);
+}
+
+.cartao-atalho .marca {
+    color: #0f766e;
+    margin-bottom: 8px;
+}
+
+.cartao-atalho h2 {
+    margin-bottom: 10px;
+}
+
+.cartao-atalho p {
+    color: #0f766e;
+    opacity: 0.85;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-cadastro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.dica-campo {
+    margin: 8px 0 0;
+}
+
+.dica-campo a {
+    color: #0f766e;
+    font-weight: 700;
+}
+
+.campo label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.campo-largo {
+    grid-column: 1 / -1;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0 12px;
+    border: 1px solid #99f6e4;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #134e4a;
+    outline: none;
+    background: #ffffff;
+    font-family: inherit;
+}
+
+input,
+select {
+    height: 40px;
+}
+
+textarea {
+    padding: 10px 12px;
+    resize: vertical;
+    min-height: 84px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0d9488;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
+}
+
+.acoes {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+button {
+    height: 42px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 8px;
+    background: #0d9488;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0f766e;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.botao-secundario {
+    background: #ffffff;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+}
+
+.botao-secundario:hover {
+    background: #ccfbf1;
+}
+
+.mensagem {
+    min-height: 20px;
+    font-size: 13px;
+}
+
+.mensagem.erro {
+    color: #dc2626;
+}
+
+.mensagem.ok {
+    color: #15803d;
+}
+
+.lista-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.lista-cabecalho .dica {
+    margin-bottom: 0;
+}
+
+#busca {
+    max-width: 260px;
+}
+
+.vazia {
+    margin: 8px 0 16px;
+}
+
+.tabela-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 1px solid #ccfbf1;
+    font-size: 14px;
+}
+
+th {
+    color: #0f766e;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+.botao-remover {
+    width: auto;
+    height: 32px;
+    padding: 0 12px;
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.botao-remover:hover {
+    background: #fecaca;
+}
+
+.observacao {
+    display: block;
+    margin-top: 4px;
+    color: #0f766e;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .topo,
+    .conteudo {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .topo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-cadastro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grade-atalhos {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-cabecalho {
+        flex-direction: column;
+    }
+
+    #busca,
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 620px) {
+    .form-cadastro {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

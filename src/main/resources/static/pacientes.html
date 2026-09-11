@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pacientes | Clínica Vida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca-bloco" href="index.html">
+            <span class="cruz" aria-hidden="true"></span>
+            <div>
+                <p class="marca">Clínica Vida</p>
+                <h1>Cadastro de Pacientes</h1>
+            </div>
+        </a>
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a class="ativo" href="pacientes.html">Pacientes</a>
+            <a href="medicos.html">Médicos</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section class="painel">
+            <h2>Novo paciente</h2>
+            <p class="dica">Preencha os dados clínicos básicos e selecione o médico responsável.</p>
+
+            <form id="form-paciente" class="form-cadastro">
+                <div class="campo campo-largo">
+                    <label for="nome">Nome completo *</label>
+                    <input id="nome" name="nome" type="text" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cpf">CPF</label>
+                    <input id="cpf" name="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00">
+                </div>
+
+                <div class="campo">
+                    <label for="dataNascimento">Data de nascimento</label>
+                    <input id="dataNascimento" name="dataNascimento" type="date">
+                </div>
+
+                <div class="campo">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" name="sexo">
+                        <option value="">Selecione</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email">
+                </div>
+
+                <div class="campo">
+                    <label for="convenio">Convênio</label>
+                    <select id="convenio" name="convenio">
+                        <option value="Particular">Particular</option>
+                        <option value="Unimed">Unimed</option>
+                        <option value="Bradesco Saúde">Bradesco Saúde</option>
+                        <option value="SulAmérica">SulAmérica</option>
+                        <option value="Amil">Amil</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="tipoSanguineo">Tipo sanguíneo</label>
+                    <select id="tipoSanguineo" name="tipoSanguineo">
+                        <option value="">Não informado</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+
+                <div class="campo campo-largo">
+                    <label for="medico">Médico responsável</label>
+                    <select id="medico" name="medico"></select>
+                    <p id="dica-medico" class="dica dica-campo">
+                        Cadastre um médico em
+                        <a href="medicos.html">Cadastro de Médicos</a>
+                        para associá-lo ao paciente.
+                    </p>
+                </div>
+
+                <div class="campo campo-largo">
+                    <label for="observacoes">Alergias e observações</label>
+                    <textarea id="observacoes" name="observacoes" rows="3" placeholder="Ex.: alergia a dipirona, hipertensão, uso contínuo de medicamentos"></textarea>
+                </div>
+
+                <div class="acoes">
+                    <p id="mensagem-app" class="mensagem" hidden></p>
+                    <button type="submit" id="botao-salvar">Cadastrar paciente</button>
+                    <button type="button" id="botao-limpar" class="botao-secundario">Limpar tela</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="lista-cabecalho">
+                <div>
+                    <h2>Pacientes cadastrados</h2>
+                    <p id="total-pacientes" class="dica">Nenhum paciente cadastrado ainda.</p>
+                </div>
+                <input id="busca" type="search" placeholder="Buscar por nome ou CPF">
+            </div>
+
+            <p id="lista-vazia" class="dica vazia">Os pacientes cadastrados aparecerão aqui.</p>
+
+            <div class="tabela-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Nascimento</th>
+                            <th>Telefone</th>
+                            <th>Convênio</th>
+                            <th>Médico</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-pacientes"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/util.js"></script>
+    <script src="js/pacientes.js"></script>
+</body>
+</html>

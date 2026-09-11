@@ -1,0 +1,17 @@
+out/
+*.class
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente / senhas
+.env
+.env.*
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+data/
