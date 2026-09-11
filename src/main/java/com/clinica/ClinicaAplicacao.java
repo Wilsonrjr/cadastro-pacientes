@@ -10,17 +10,26 @@ import java.nio.file.Path;
 public class ClinicaAplicacao {
 
     public static void main(String[] args) throws Exception {
-        Path pastaStatic = PastasDoProjeto.pastaStatic();
+
         Path arquivoPacientes = PastasDoProjeto.arquivoPacientes();
         Path arquivoMedicos = PastasDoProjeto.arquivoMedicos();
 
-        RepositorioPacientes repositorioPacientes = new RepositorioPacientes(arquivoPacientes);
-        RepositorioMedicos repositorioMedicos = new RepositorioMedicos(arquivoMedicos);
+        RepositorioPacientes repositorioPacientes =
+            new RepositorioPacientes(arquivoPacientes);
 
-        ServidorWeb servidor = new ServidorWeb(pastaStatic, repositorioPacientes, repositorioMedicos);
+        RepositorioMedicos repositorioMedicos =
+            new RepositorioMedicos(arquivoMedicos);
+
+        ServidorWeb servidor = new ServidorWeb(
+            repositorioPacientes,
+            repositorioMedicos
+        );
+
         servidor.iniciar();
 
-        String endereco = "http://127.0.0.1:" + Configuracao.PORTA;
+        String endereco =
+            "http://127.0.0.1:" + Configuracao.PORTA;
+
         System.out.println("Servidor iniciado.");
         System.out.println("Abra no navegador: " + endereco);
         System.out.println("Pacientes salvos em: " + arquivoPacientes);
@@ -30,12 +39,15 @@ public class ClinicaAplicacao {
     }
 
     private static void abrirNavegador(String endereco) {
+
         try {
             if (Desktop.isDesktopSupported()) {
                 Desktop.getDesktop().browse(URI.create(endereco));
             }
         } catch (Exception erro) {
-            System.out.println("Não foi possível abrir o navegador automaticamente.");
+            System.out.println(
+                "Não foi possível abrir o navegador automaticamente."
+            );
         }
     }
 }
