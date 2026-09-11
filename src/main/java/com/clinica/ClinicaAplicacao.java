@@ -3,7 +3,6 @@ package com.clinica;
 import com.clinica.persistencia.RepositorioMedicos;
 import com.clinica.persistencia.RepositorioPacientes;
 import com.clinica.web.ServidorWeb;
-
 import java.awt.Desktop;
 import java.net.URI;
 import java.nio.file.Path;
